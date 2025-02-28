@@ -1,0 +1,6 @@
+{
+	"name": "@resconet/<%= name %>",
+	"version": "<%= version %>",
+	"author": "Resco",
+	"license": "UNLICENSED"
+}

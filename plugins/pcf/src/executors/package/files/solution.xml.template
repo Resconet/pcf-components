@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.1.0.643" SolutionPackageVersion="9.1" languagecode="1033"
+	generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SolutionManifest>
+		<UniqueName><%= componentNamespace %><%= componentName %></UniqueName>
+		<LocalizedNames>
+			<LocalizedName description="<%= componentNamespace %><%= componentName %>" languagecode="1033" />
+		</LocalizedNames>
+		<Descriptions />
+		<Version><%= version %></Version>
+		<Managed><%= managedFlag %></Managed>
+		<Publisher>
+			<UniqueName><%= publisher %></UniqueName>
+			<LocalizedNames>
+				<LocalizedName description="<%= publisher %>" languagecode="1033" />
+			</LocalizedNames>
+			<Descriptions>
+				<Description description="<%= publisher %>" languagecode="1033" />
+			</Descriptions>
+			<EMailAddress xsi:nil="true"></EMailAddress>
+			<SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+			<CustomizationPrefix><%= prefix %></CustomizationPrefix>
+			<CustomizationOptionValuePrefix>64827</CustomizationOptionValuePrefix>
+			<Addresses>
+			</Addresses>
+		</Publisher>
+		<RootComponents>
+			<RootComponent type="66" schemaName="<%= componentNamespace %>.<%= componentName %>"
+				behavior="0" />
+		</RootComponents>
+		<MissingDependencies />
+	</SolutionManifest>
+</ImportExportXml>

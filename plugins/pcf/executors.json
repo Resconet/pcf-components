@@ -1,0 +1,9 @@
+{
+	"executors": {
+		"package": {
+			"implementation": "./src/executors/package/executor",
+			"schema": "./src/executors/package/schema.json",
+			"description": "Create a PCF solution package"
+		}
+	}
+}

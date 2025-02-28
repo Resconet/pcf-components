@@ -1,0 +1,151 @@
+{
+	"root": "apps/pcf/hierarchy",
+	"name": "pcf-hierarchy",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/pcf/hierarchy/src",
+	"projectType": "application",
+	"tags": ["scope:crm", "type:pcf", "mode:strict"],
+	"targets": {
+		"build": {
+			"executor": "@nx/webpack:webpack",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"compiler": "babel",
+				"outputPath": "dist/apps/pcf/hierarchy",
+				"index": "apps/pcf/hierarchy/src/index.html",
+				"baseHref": "/",
+				"main": "apps/pcf/hierarchy/src/main.tsx",
+				"tsConfig": "apps/pcf/hierarchy/tsconfig.app.json",
+				"assets": [],
+				"styles": ["apps/pcf/hierarchy/src/styles.scss"],
+				"scripts": [],
+				"webpackConfig": "apps/pcf/hierarchy/webpack.config.js",
+				"type": "standard",
+				"inputOutputTypes": "apps/pcf/hierarchy/src/inputsOutputs.ts",
+				"requiredFeatures": ["WebAPI", "Utility", "Utility.getEntityMetadata"],
+				"optionalFeatures": [""],
+				"generateIndexHtml": false
+			},
+			"configurations": {
+				"development": {
+					"extractLicenses": false,
+					"optimization": false,
+					"sourceMap": true,
+					"vendorChunk": true,
+					"assets": [
+						{
+							"input": "node_modules/pcf-start",
+							"glob": "harness.js",
+							"output": ""
+						},
+						{
+							"input": "node_modules/pcf-start/loc",
+							"glob": "**",
+							"output": "loc"
+						},
+						{
+							"input": "node_modules/pcf-start",
+							"glob": "index.html",
+							"output": ""
+						}
+					]
+				},
+				"production": {
+					"fileReplacements": [
+						{
+							"replace": "apps/pcf/hierarchy/src/environments/environment.ts",
+							"with": "apps/pcf/hierarchy/src/environments/environment.prod.ts"
+						}
+					],
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": false,
+					"namedChunks": false,
+					"extractLicenses": true,
+					"vendorChunk": false
+				}
+			}
+		},
+		"serve": {
+			"executor": "@nx/webpack:dev-server",
+			"defaultConfiguration": "development",
+			"options": {
+				"buildTarget": "pcf-hierarchy:build",
+				"hmr": true
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "pcf-hierarchy:build:development"
+				},
+				"production": {
+					"buildTarget": "pcf-hierarchy:build:production",
+					"hmr": false
+				}
+			}
+		},
+		"test": {
+			"executor": "@nx/vite:test",
+			"outputs": ["{options.reportsDirectory}"],
+			"options": {
+				"reportsDirectory": "../../../coverage/apps/pcf/hierarchy"
+			}
+		},
+		"lint": {
+			"executor": "@nx/eslint:lint"
+		},
+		"serve-static": {
+			"executor": "@nx/web:file-server",
+			"dependsOn": ["build"],
+			"options": {
+				"buildTarget": "pcf-hierarchy:build",
+				"spa": true
+			}
+		},
+		"package": {
+			"executor": "pcf:package",
+			"options": {
+				"outputPath": "out/apps/pcf/hierarchy/pcf-hierarchy-{version}.zip",
+				"prefix": "rescopcf",
+				"publisher": "RescoPublisher",
+				"buildTarget": "pcf-hierarchy:build"
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "pcf-hierarchy:build:development"
+				},
+				"production": {
+					"buildTarget": "pcf-hierarchy:build:production",
+					"managed": true
+				}
+			},
+			"defaultConfiguration": "production"
+		},
+		"publish": {
+			"executor": "dynamics:publish",
+			"options": {
+				"webResourcePath": "cc_RescoPcf.Hierarchy",
+				"buildTarget": "pcf-hierarchy:build"
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "pcf-hierarchy:build:development",
+					"buildTargetOptions": {
+						"sourceMap": false
+					}
+				},
+				"production": {
+					"buildTarget": "pcf-hierarchy:build:production"
+				}
+			},
+			"defaultConfiguration": "development"
+		},
+		"proxy": {
+			"executor": "dynamics:proxy",
+			"options": {
+				"webResourcePath": "cc_RescoPcf.Hierarchy",
+				"port": 4200
+			}
+		}
+	}
+}

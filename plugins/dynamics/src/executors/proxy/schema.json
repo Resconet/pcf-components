@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"version": 2,
+	"title": "Proxy executor",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"webResourcePath": {
+			"type": "string",
+			"description": "Part of url to the app bundle webresources after the 'webresources/' and before the actual app bundle files, e.g. resco_MobileCRM/WebClient"
+		},
+		"port": {
+			"type": "integer",
+			"description": "The port on which the app is running on localhost that the proxy will direct requests to"
+		},
+		"proxyPort": {
+			"type": "integer",
+			"description": "The port to listen for incoming requests"
+		}
+	},
+	"required": ["webResourcePath"]
+}

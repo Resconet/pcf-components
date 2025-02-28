@@ -1,0 +1,200 @@
+{
+	"root": true,
+	"ignorePatterns": ["**/*"],
+	"plugins": ["@nx", "tree-shaking"],
+	"overrides": [
+		{
+			"files": "*.json",
+			"parser": "jsonc-eslint-parser",
+			"rules": {}
+		},
+		{
+			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"rules": {
+				"@nx/enforce-module-boundaries": [
+					"error",
+					{
+						"enforceBuildableLibDependency": true,
+						"allowCircularSelfDependency": false,
+						"allow": [],
+						"depConstraints": [
+							{
+								"sourceTag": "scope:shared",
+								"onlyDependOnLibsWithTags": ["scope:shared"]
+							},
+							{
+								"sourceTag": "scope:admin",
+								"onlyDependOnLibsWithTags": ["scope:shared", "scope:admin"]
+							},
+							{
+								"sourceTag": "scope:crm",
+								"onlyDependOnLibsWithTags": ["scope:shared", "scope:crm"]
+							},
+							{
+								"sourceTag": "scope:houston",
+								"onlyDependOnLibsWithTags": ["scope:shared", "scope:houston", "scope:crm"]
+							},
+							{
+								"sourceTag": "type:app",
+								"onlyDependOnLibsWithTags": ["*"]
+							},
+							{
+								"sourceTag": "type:webview",
+								"onlyDependOnLibsWithTags": ["*"]
+							},
+							{
+								"sourceTag": "type:pcf",
+								"onlyDependOnLibsWithTags": ["*"]
+							},
+							{
+								"sourceTag": "type:demo",
+								"onlyDependOnLibsWithTags": ["*"]
+							},
+							{
+								"sourceTag": "type:feature",
+								"onlyDependOnLibsWithTags": ["*"]
+							},
+							{
+								"sourceTag": "type:ui",
+								"onlyDependOnLibsWithTags": ["type:ui", "type:sdk", "type:api", "type:data", "type:service", "type:util", "type:testing"]
+							},
+							{
+								"sourceTag": "type:api",
+								"onlyDependOnLibsWithTags": ["type:api", "type:util"]
+							},
+							{
+								"sourceTag": "type:sdk",
+								"onlyDependOnLibsWithTags": ["type:sdk", "type:ui", "type:api", "type:data", "type:service", "type:util", "type:testing"]
+							},
+							{
+								"sourceTag": "type:data",
+								"onlyDependOnLibsWithTags": ["type:data", "type:api", "type:util", "type:testing", "type:sdk"]
+							},
+							{
+								"sourceTag": "type:service",
+								"onlyDependOnLibsWithTags": ["type:service", "type:api", "type:data", "type:util", "type:testing", "type:sdk"]
+							},
+							{
+								"sourceTag": "type:util",
+								"onlyDependOnLibsWithTags": ["type:util", "type:testing"]
+							},
+							{
+								"sourceTag": "type:testing",
+								"onlyDependOnLibsWithTags": ["type:api", "type:data", "type:util", "type:service", "type:testing"]
+							},
+							{
+								"sourceTag": "mode:strict",
+								"onlyDependOnLibsWithTags": ["mode:strict"]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"files": ["*.ts", "*.tsx"],
+			"extends": ["plugin:@nx/typescript", "prettier"],
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "error",
+				"curly": "error",
+				"quotes": [
+					"error",
+					"double",
+					{
+						"avoidEscape": true,
+						"allowTemplateLiterals": true
+					}
+				],
+				"@typescript-eslint/naming-convention": [
+					"error",
+					{
+						"selector": "default",
+						"format": ["camelCase"]
+					},
+					{
+						"selector": "import",
+						"format": ["camelCase", "PascalCase", "UPPER_CASE"]
+					},
+					{
+						"selector": "memberLike",
+						"modifiers": ["private", "static", "readonly"],
+						"format": ["UPPER_CASE"]
+					},
+					{
+						"selector": "memberLike",
+						"modifiers": ["static", "readonly"],
+						"format": ["UPPER_CASE"]
+					},
+					{
+						"selector": "enumMember",
+						"format": ["PascalCase"]
+					},
+					{
+						"selector": "variable",
+						"format": ["camelCase", "UPPER_CASE"]
+					},
+					{
+						"selector": "parameter",
+						"format": ["camelCase"],
+						"leadingUnderscore": "allow"
+					},
+					{
+						"selector": "memberLike",
+						"modifiers": ["private"],
+						"format": ["camelCase"]
+					},
+					{
+						"selector": "memberLike",
+						"modifiers": ["requiresQuotes"],
+						"format": null
+					},
+					{
+						"selector": "property",
+						"modifiers": ["private"],
+						"format": ["camelCase"],
+						"leadingUnderscore": "allow"
+					},
+					{
+						"selector": "property",
+						"modifiers": ["private", "static", "readonly"],
+						"format": ["UPPER_CASE"]
+					},
+					{
+						"selector": "typeLike",
+						"format": ["PascalCase"]
+					},
+					{
+						"selector": "variable",
+						"modifiers": ["destructured"],
+						"format": null
+					},
+					{
+						"selector": "parameter",
+						"modifiers": ["destructured"],
+						"format": null
+					},
+					{
+						"selector": "variable",
+						"modifiers": ["global"],
+						"format": ["camelCase", "UPPER_CASE", "PascalCase"]
+					},
+					{
+						"selector": "function",
+						"modifiers": ["global"],
+						"format": ["camelCase", "PascalCase"]
+					}
+				],
+				"@typescript-eslint/no-extra-semi": "error",
+				"no-extra-semi": "off"
+			}
+		},
+		{
+			"files": ["*.js", "*.jsx"],
+			"extends": ["plugin:@nx/javascript"],
+			"rules": {
+				"@typescript-eslint/no-extra-semi": "error",
+				"no-extra-semi": "off"
+			}
+		}
+	]
+}

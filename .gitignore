@@ -1,0 +1,74 @@
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/dist-maps
+/tmp
+/out-tsc
+/out
+/.lighthouseci
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+/.vs
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/__blobstorage__
+/.dependencygraph
+/.sass-cache
+/connect.lock
+/coverage
+/reports
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.nx/cache
+.nx/workspace-data
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Resco specific
+junit.xml
+debug.config*.js
+debug.log
+apps/webapp/OfflineHtml/*
+apps/woodford/config/mobileprojects/*
+apps/*/src/generated
+.env.local
+.env.local.*
+
+tags
+
+# This has to be last to keep the empty OfflineHtml directory itself in git
+!/**/.gitkeep
+
+# JSBridge docs
+JSBridgeReference.json
+
+# Proxy plugin
+plugins/dynamics/src/executors/proxy/ca/certs/_*
+plugins/dynamics/src/executors/proxy/ca/keys/_*
+
+# Specials
+.nx_upgrade_step

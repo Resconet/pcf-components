@@ -1,0 +1,258 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Node: Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "WebApp (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}/apps/webapp"
+		},
+		{
+			"name": "Woodford (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8081",
+			"webRoot": "${workspaceFolder}/apps/woodford"
+		},
+		{
+			"name": "Capsule Manager (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8081",
+			"webRoot": "${workspaceFolder}/apps/capsule-manager"
+		},
+		{
+			"name": "Report Builder (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8081",
+			"webRoot": "${workspaceFolder}/apps/report-builder"
+		},
+		{
+			"name": "Questionnaire Builder (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8081",
+			"webRoot": "${workspaceFolder}/apps/questionnaire-builder"
+		},
+		{
+			"name": "Questionnaire Player (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/questionnaire-player"
+		},
+		{
+			"name": "Demo: Controls (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/demos/controls-demo"
+		},
+		{
+			"name": "Demo: CrmService (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/demos/crm-service-demo"
+		},
+		{
+			"name": "Demo: Scheduler (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/demos/scheduler-demo"
+		},
+		{
+			"name": "Demo: Image Gallery (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/demos/image-gallery-demo"
+		},
+		{
+			"name": "WebView: Tree (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/components/tree-webview"
+		},
+		{
+			"name": "WebView: Guide Chat (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/components/guide-chat-webview"
+		},
+		{
+			"name": "MobileApp (Windows Desktop)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:8080/",
+			"webRoot": "${workspaceFolder}/apps/webapp",
+			"cwd": "${workspaceFolder}\\..\\MobileCrmApps\\MobileCrm\\bin\\Desktop\\Debug\\x64",
+			"runtimeExecutable": "${workspaceFolder}\\..\\MobileCrmApps\\MobileCrm\\bin\\Desktop\\Debug\\x64\\MobileCrm.exe",
+			"runtimeArgs": ["-htmlRoot", "http://localhost:8080"]
+		},
+		{
+			"name": "MobileApp (iOS)",
+			"type": "chrome",
+			"request": "attach",
+			"port": 9000
+		},
+		{
+			"name": "MobileApp (Android)",
+			"type": "android-webview",
+			"request": "attach",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "Guide Editor (Chrome)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:8082/",
+			"webRoot": "${workspaceFolder}/apps/guide-editor"
+		},
+		{
+			"name": "Image Generator (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/components/image-generator-webview"
+		},
+		{
+			"name": "GuidePlayer PowerApp (Chrome)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:4200/?data=endpoint%3DSOAP&id=guideIdHere",
+			"webRoot": "${workspaceFolder}/apps/guide-player-powerapp"
+		},
+		{
+			"name": "Guide Chat PowerApp (Chrome)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:4200/?data=endpoint%3DSOAP",
+			"webRoot": "${workspaceFolder}/apps/guide-chat-powerapp"
+		},
+		{
+			"name": "Welcome Page PowerApp (Chrome)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:4200/",
+			"webRoot": "${workspaceFolder}/apps/welcome-page-powerapp"
+		},
+		{
+			"name": "Pcf: DateRangePicker (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/date-range-picker"
+		},
+		{
+			"name": "Pcf: ImageGallery (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/image-gallery"
+		},
+		{
+			"name": "Pcf: KanbanPcf (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/kanban-pcf"
+		},
+		{
+			"name": "Pcf: FileUploader (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/file-uploader"
+		},
+		{
+			"name": "Pcf: Tree (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/tree"
+		},
+		{
+			"name": "Pcf: MultiselectDropdownList (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/multiselect-dropdown-list"
+		},
+		{
+			"name": "Pcf: AiTranslator (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/ai-translator"
+		},
+		{
+			"name": "Pcf: AiImageGenerator (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/ai-image-generator"
+		},
+		{
+			"name": "Pcf: AiImageGenerator (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/ai-image-generator"
+		},
+		{
+			"name": "Pcf: InspectionReportViewer (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/pcf-inspection-report-viewer"
+		},
+		{
+			"name": "Pcf: TreeLookup (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/tree-lookup"
+		},
+		{
+			"name": "Pcf: Questionnaire (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/questionnaire"
+		},
+		{
+			"name": "Pcf: Checklist (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/checklist"
+		},
+		{
+			"name": "Pcf: Hierarchy (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/hierarchy"
+		},
+		{
+			"name": "Pcf: Timeline (Chrome)",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}/apps/pcf/timeline"
+		}
+	]
+}

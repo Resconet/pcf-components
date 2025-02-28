@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/schema",
+	"version": 2,
+	"title": "JsonSchemaToTypes executor",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"schemaDirectory": {
+			"type": "string",
+			"description": "Directory with .json schema files from which Typescript type files should be generated."
+		},
+		"generatedDirectory": {
+			"type": "string",
+			"description": "Directory the Typescript type files should be generated in."
+		},
+		"prettierConfigFile": {
+			"type": "string",
+			"description": "File with prettier configuration. If not provided, default .prettierrc will be used."
+		}
+	},
+	"required": ["schemaDirectory", "generatedDirectory"]
+}

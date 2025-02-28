@@ -1,0 +1,109 @@
+{
+	"defaultProject": "webapp",
+	"generators": {
+		"@nx/web:application": {
+			"style": "scss",
+			"linter": "eslint",
+			"unitTestRunner": "jest",
+			"e2eTestRunner": "cypress"
+		},
+		"@nx/web:library": {
+			"style": "scss",
+			"linter": "eslint",
+			"unitTestRunner": "jest"
+		},
+		"@nx/react": {
+			"application": {
+				"babel": true,
+				"style": "scss",
+				"linter": "eslint",
+				"bundler": "webpack"
+			},
+			"component": {
+				"style": "scss"
+			},
+			"library": {
+				"style": "scss",
+				"linter": "eslint",
+				"unitTestRunner": "jest"
+			}
+		}
+	},
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"],
+			"cache": true
+		},
+		"e2e": {
+			"inputs": ["default", "^production"],
+			"cache": true
+		},
+		"lint": {
+			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+			"cache": true
+		},
+		"@nx/jest:jest": {
+			"cache": true,
+			"inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+			"options": {
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		},
+		"@nx/esbuild:esbuild": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		},
+		"@nx/eslint:lint": {
+			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+			"cache": true
+		},
+		"@nx/js:tsc": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		},
+		"package": {
+			"inputs": ["default", "pcfTools"],
+			"outputs": ["{workspaceRoot}/out/{projectRoot}"],
+			"cache": true
+		},
+		"@nx/vite:test": {
+			"cache": true,
+			"inputs": ["default", "^production"]
+		},
+		"@nx/vite:build": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		},
+		"@nx/webpack:webpack": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		}
+	},
+	"namedInputs": {
+		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"sharedGlobals": ["{workspaceRoot}/nx.json", "{workspaceRoot}/package-lock.json", "{workspaceRoot}/babel.config.json"],
+		"production": [
+			"default",
+			"!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+			"!{projectRoot}/tsconfig.spec.json",
+			"!{projectRoot}/jest.config.[jt]s",
+			"!{projectRoot}/.eslintrc.json",
+			"!{projectRoot}/src/test-setup.[jt]s"
+		],
+		"pcfTools": ["{workspaceRoot}/tools/pcf/**/*", "{workspaceRoot}/plugins/pcf/**/*"]
+	},
+	"useInferencePlugins": false,
+	"defaultBase": "master"
+}

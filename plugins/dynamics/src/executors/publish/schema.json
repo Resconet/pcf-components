@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"version": 2,
+	"title": "Publish executor",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"webResourcePath": {
+			"type": "string",
+			"description": "Part of url to the app bundle webresources after the 'webresources/' and before the actual app bundle files, e.g. resco_MobileCRM/WebClient"
+		},
+		"withoutAssets": {
+			"type": "boolean",
+			"description": "If true, the assets will not be published."
+		},
+		"buildTarget": {
+			"type": "string",
+			"description": "The target to run to build you the app."
+		},
+		"buildTargetOptions": {
+			"type": "object",
+			"description": "Additional options to pass into the build target.",
+			"default": {}
+		}
+	},
+	"required": ["webResourcePath"]
+}

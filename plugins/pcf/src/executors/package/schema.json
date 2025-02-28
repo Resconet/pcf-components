@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/schema",
+	"version": 2,
+	"title": "Package executor",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"buildTarget": {
+			"type": "string",
+			"description": "The target to run to build the app."
+		},
+		"buildTargetOptions": {
+			"type": "object",
+			"description": "Additional options to pass into the build target.",
+			"default": {}
+		},
+		"prefix": {
+			"type": "string",
+			"description": "The prefix to use for the package."
+		},
+		"publisher": {
+			"type": "string",
+			"description": "The publisher to use for the package."
+		},
+		"outputPath": {
+			"type": "string",
+			"description": "The path where the resulting package will be written."
+		},
+		"managed": {
+			"type": "boolean",
+			"description": "Whether the generated package will be a managed or unmanaged solution.",
+			"default": false
+		}
+	},
+	"additionalProperties": false,
+	"required": ["buildTarget", "prefix", "publisher", "outputPath"]
+}

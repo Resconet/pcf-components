@@ -1,0 +1,9 @@
+{
+	"executors": {
+		"json-schema-to-types": {
+			"implementation": "./src/executors/json-schema-to-types/executor",
+			"schema": "./src/executors/json-schema-to-types/schema.json",
+			"description": "Generate Typescript types from JSON schema executor"
+		}
+	}
+}

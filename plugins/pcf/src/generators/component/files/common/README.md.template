@@ -1,0 +1,25 @@
+# <%= name %>
+
+This is a PCF component application.
+
+## Building
+
+Run `nx build <%= name %>` to build the library.
+
+## Serving
+
+Run `nx serve <%= name %>` to serve the component locally for development. The component will be available at http://localhost:4200.
+
+## Running unit tests
+
+Run `nx test <%= name %>` to execute the unit tests via [Jest](https://jestjs.io).
+
+## Packaging
+
+Run `nx package <%= name %>` to create a zip file importable as PowerApps solution.
+
+The package will be located at `out/apps/pcf/<%= name %>/<%= name %>.zip`.
+
+## Configuring
+
+For information about configuring the PCF plugin, please refer to the [PCF Plugin Documentation](<%= pluginsPath %>/pcf/README.md).

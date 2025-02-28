@@ -1,0 +1,38 @@
+@keyframes subtleAttention {
+	0% {
+		transform: scale(1);
+		background-color: white;
+	}
+	50% {
+		transform: scale(1.05);
+		background-color: rgba(180, 220, 255, 0.2); /* Jemná svetlomodrá */
+	}
+	100% {
+		transform: scale(1);
+		background-color: white;
+	}
+}
+
+.highlight {
+	animation: subtleAttention 1s ease-out;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.paper {
+	width: 368px;
+	text-align: initial;
+}
+
+.link {
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

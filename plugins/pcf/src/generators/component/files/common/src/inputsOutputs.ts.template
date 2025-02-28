@@ -1,0 +1,12 @@
+export interface Inputs {
+	/**
+	 * Sample property.
+	 * @oftype SingleLine.Text
+	 * @required
+	 */
+	sampleProperty: ComponentFramework.PropertyTypes.StringProperty;
+}
+
+export interface Outputs {
+	sampleProperty?: string;
+}

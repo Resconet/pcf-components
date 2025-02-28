@@ -1,0 +1,14 @@
+{
+	"executors": {
+		"proxy": {
+			"implementation": "./src/executors/proxy/executor",
+			"schema": "./src/executors/proxy/schema.json",
+			"description": "proxy executor"
+		},
+		"publish": {
+			"implementation": "./src/executors/publish/executor",
+			"schema": "./src/executors/publish/schema.json",
+			"description": "Publish local build to dataverse"
+		}
+	}
+}

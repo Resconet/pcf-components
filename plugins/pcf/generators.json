@@ -1,0 +1,9 @@
+{
+	"generators": {
+		"component": {
+			"factory": "./src/generators/component/generator",
+			"schema": "./src/generators/component/schema.json",
+			"description": "Generates new PCF component application"
+		}
+	}
+}

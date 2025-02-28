@@ -1,0 +1,37 @@
+@startuml
+
+title Resco Library Architecture
+
+skinparam component {
+  fontSize 18
+  defautFontSize 18
+  borderRoundCorner 15
+  backgroundColor<<utils>> LightSkyBlue
+  backgroundColor<<testing>> Bisque
+  backgroundColor<<data>> DodgerBlue
+  backgroundColor<<service>> RoyalBlue
+  backgroundColor<<ui>> LightGreen
+  backgroundColor<<feature>> YellowGreen
+  backgroundColor<<app>> LightGray
+  backgroundColor<<demo>> LightGray
+}
+
+component [common, component, logger, usage-logger, localizations] as utils <<utils>>
+component [testing, testing-crm] as testing <<testing>>
+component [crm-data, questionare-data, workflow] as data <<data>>
+component [crm-service, resco-sdk, jsBridge2, jsBridge-universal, jsBridge-service, houston-service, ...] as service <<service>>
+component [controls, common-ui, crm-ui, image-gallery, image-scroller, houston-ui, ui-advancedlist, …] as ui <<ui>>
+component [scheduler, tree, timeline-bridge, salesforce-chatter, ...] as feature <<feature>>
+component [webapp, woodford, guide-editor, ...] as app <<app>>
+component [controls-demo, scheduler-demo, ...] as demo <<demo>>
+
+[utils] --[hidden]> [data]
+[testing] --[hidden]> [data]
+[data] --[hidden]> [service]
+[service] --[hidden]> [ui]
+[ui] --[hidden]> [feature]
+[feature] --[hidden]> [app]
+[feature] --[hidden]> [demo]
+
+
+@enduml
